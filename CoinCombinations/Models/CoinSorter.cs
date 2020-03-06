@@ -1,27 +1,27 @@
 using System;
 
-namespace Project.Models
+namespace CoinCombinations.Models
 {
   public class CoinSorter
   {
-    public static int dollar = 100;
-    public static int quarter = 25;
-    public static int dime = 10;
-    public static int nickel = 5;
-    public static int penny = 1;
+    public static Coin dollar = new Coin("dollars", 100);
+    public static Coin quarter = new Coin("quarters", 25);
+    public static Coin dime = new Coin("dimes", 10);
+    public static Coin nickel = new Coin("nickels", 5);
+    public static Coin penny = new Coin("pennies", 1);
 
     public static int Remainder = 0;
 
-    public static int[] highToLow = new int[] { dollar, quarter, dime, nickel, penny };
+    public static Coin[] highToLow = new Coin[] { dollar, quarter, dime, nickel, penny };
 
     public static void HowManyCoins(int cents, int startIndex)
     {
-      Remainder = cents % highToLow[startIndex];
+      Remainder = cents % highToLow[startIndex].Value;
       if (Remainder > 0)
       {
         HowManyCoins(Remainder, startIndex + 1);
       }
-      Console.WriteLine($"{startIndex}: {cents / highToLow[startIndex]}");
+      Console.WriteLine($"{highToLow[startIndex].Name}: {cents / highToLow[startIndex].Value}");
 
     }
   }

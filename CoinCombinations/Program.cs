@@ -1,15 +1,24 @@
 using System;
-using Project.Models;
+using CoinCombinations.Models;
 
-namespace Project
+namespace CoinCombinations
 {
   public class Program
   {
     public static void Main()
     {
-      Console.WriteLine("How many cents change are owed?");
-      int cents = int.Parse(Console.ReadLine());
+      int cents = GetChangeOwedInput();
       CoinSorter.HowManyCoins(cents, 0);
+    }
+
+    public static int GetChangeOwedInput()
+    {
+      Console.WriteLine("Customer total cents owed?");
+      int total = int.Parse(Console.ReadLine());
+      Console.WriteLine("Customer cents paid?");
+      int paid = int.Parse(Console.ReadLine());
+      Console.WriteLine($"Change due: {paid - total} cents");
+      return paid - total;
     }
   }
 }

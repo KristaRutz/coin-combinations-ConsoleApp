@@ -1,11 +1,16 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Project.Models;
+using CoinCombinations.Models;
 
-namespace Project.Tests
+namespace CoinCombinations.Tests
 {
   [TestClass]
-  public class ClassNameTests
+  public class CoinSorterTests
   {
-
+    [TestMethod]
+    public void Sort_SortValuesUnder5_Pennies()
+    {
+      CoinSorter change = new CoinSorter();
+      Assert.AreEqual(4, change);
+    }
   }
 }
