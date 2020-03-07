@@ -29,15 +29,31 @@ namespace CoinCombinations.Models
     public static void HowManyCoins(int cents, int startIndex)
     {
       Remainder = cents % highToLow[startIndex].Value;
-
-      Console.WriteLine($"{highToLow[startIndex].Name}: {cents / highToLow[startIndex].Value}");
-
+      if (cents / highToLow[startIndex].Value != 0)
+      {
+        Console.WriteLine($"{highToLow[startIndex].Name}: {cents / highToLow[startIndex].Value}");
+      }
       if (Remainder > 0)
       {
         HowManyCoins(Remainder, startIndex + 1);
       }
+    }
 
+    public static string ConvertToDollarString(int cents)
+    {
+      int dollars = cents / 100;
+      int centsLeft = cents % 100;
+      if (centsLeft < 10)
+      {
+        return $"${dollars}.0{centsLeft}";
+      }
+      return $"${dollars}.{centsLeft}";
+    }
 
+    public static int ParseCents(string dollars)
+    {
+      int cents = (int)(double.Parse(dollars) * 100);
+      return cents;
     }
   }
 }

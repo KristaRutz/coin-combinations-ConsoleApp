@@ -13,11 +13,13 @@ namespace CoinCombinations
 
     public static int GetChangeOwedInput()
     {
-      Console.WriteLine("Customer total cents owed?");
-      int total = int.Parse(Console.ReadLine());
-      Console.WriteLine("Customer cents paid?");
-      int paid = int.Parse(Console.ReadLine());
-      Console.WriteLine($"Change due: {paid - total} cents");
+      Console.WriteLine("Customer owes: [follow the format '$0.71' or '$12.01' or '$2']");
+      Console.Write("$");
+      int total = CoinSorter.ParseCents(Console.ReadLine());
+      Console.WriteLine("Customer paid:");
+      Console.Write("$");
+      int paid = CoinSorter.ParseCents(Console.ReadLine());
+      Console.WriteLine($"Change due: {CoinSorter.ConvertToDollarString(paid - total)}");
       return paid - total;
     }
   }
