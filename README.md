@@ -36,14 +36,16 @@ Download or clone the repository to run this program locally! _This program requ
 - Spec: The program calculates the difference between paid and owed and then prints how many of each type of coin or bill to make up that change.
   - Input:
     - Customer owes: [example formats: '$0.71' or '$12.01' or '$2']
-    - \$.72
+    - \$72
     - Customer paid:
-    - \$300
+    - \$400.78
   - Output:
-    - Change due: \$299.28
-    - hundreds: 59
-    - ones: 4
-    - quarters: 1
+    - Change due: \$328.78
+    - hundreds: 3
+    - twenties: 1
+    - fives: 1
+    - ones: 3
+    - quarters: 3
     - pennies: 3
 
 <details>
