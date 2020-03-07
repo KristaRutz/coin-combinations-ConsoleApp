@@ -7,13 +7,22 @@ namespace CoinCombinations
   {
     public static void Main()
     {
-      int cents = GetChangeOwedInput();
-      CoinSorter.SortCoins(cents);
+      try
+      {
+        int cents = GetChangeOwedInput();
+        CoinSorter.SortCoins(cents);
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+        Main();
+      }
     }
 
     public static int GetChangeOwedInput()
     {
-      Console.WriteLine("Customer owes: [follow the format '$0.71' or '$12.01' or '$2']");
+
+      Console.WriteLine("Customer owes: [example formats: '$0.71' or '$12.01' or '$2']");
       Console.Write("$");
       int total = CoinSorter.ParseCents(Console.ReadLine());
       Console.WriteLine("Customer paid:");
@@ -21,6 +30,7 @@ namespace CoinCombinations
       int paid = CoinSorter.ParseCents(Console.ReadLine());
       Console.WriteLine($"Change due: {CoinSorter.ConvertToDollarString(paid - total)}");
       return paid - total;
+
     }
   }
 }

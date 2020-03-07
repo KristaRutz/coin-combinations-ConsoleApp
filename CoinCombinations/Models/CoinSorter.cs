@@ -4,7 +4,11 @@ namespace CoinCombinations.Models
 {
   public class CoinSorter
   {
-    public static Coin dollar = new Coin("dollars", 100);
+    public static Coin hundred = new Coin("hundreds", 10000);
+    public static Coin twenty = new Coin("twenties", 2000);
+    public static Coin ten = new Coin("tens", 1000);
+    public static Coin five = new Coin("fives", 500);
+    public static Coin dollar = new Coin("ones", 100);
     public static Coin quarter = new Coin("quarters", 25);
     public static Coin dime = new Coin("dimes", 10);
     public static Coin nickel = new Coin("nickels", 5);
@@ -12,7 +16,7 @@ namespace CoinCombinations.Models
 
     public static int Remainder = 0;
 
-    public static Coin[] highToLow = new Coin[] { dollar, quarter, dime, nickel, penny };
+    public static Coin[] highToLow = new Coin[] { hundred, twenty, ten, five, dollar, quarter, dime, nickel, penny };
 
     public static void SortCoins(int cents)
     {
@@ -52,8 +56,16 @@ namespace CoinCombinations.Models
 
     public static int ParseCents(string dollars)
     {
-      int cents = (int)(double.Parse(dollars) * 100);
-      return cents;
+      bool parsed = double.TryParse(dollars, out double result);
+      if (parsed)
+      {
+        int cents = (int)(result * 100);
+        return cents;
+      }
+      else
+      {
+        throw new Exception("Please enter a numerical input.");
+      }
     }
   }
 }
