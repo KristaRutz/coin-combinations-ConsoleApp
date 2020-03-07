@@ -8,7 +8,7 @@ namespace CoinCombinations
     public static void Main()
     {
       int cents = GetChangeOwedInput();
-      CoinSorter.HowManyCoins(cents, 0);
+      CoinSorter.SortCoins(cents);
     }
 
     public static int GetChangeOwedInput()

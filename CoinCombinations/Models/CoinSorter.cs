@@ -14,14 +14,29 @@ namespace CoinCombinations.Models
 
     public static Coin[] highToLow = new Coin[] { dollar, quarter, dime, nickel, penny };
 
+    public static void SortCoins(int cents)
+    {
+      if (cents <= 0)
+      {
+        Console.WriteLine("No coins back.");
+      }
+      else
+      {
+        HowManyCoins(cents, 0);
+      }
+    }
+
     public static void HowManyCoins(int cents, int startIndex)
     {
       Remainder = cents % highToLow[startIndex].Value;
+
+      Console.WriteLine($"{highToLow[startIndex].Name}: {cents / highToLow[startIndex].Value}");
+
       if (Remainder > 0)
       {
         HowManyCoins(Remainder, startIndex + 1);
       }
-      Console.WriteLine($"{highToLow[startIndex].Name}: {cents / highToLow[startIndex].Value}");
+
 
     }
   }
