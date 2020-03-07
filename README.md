@@ -1,13 +1,13 @@
-# Project Name (C# Console Application)
+# Coin Sorter (C# Console Application)
 
-#### A An console-based application to simulate ... where the user can ... hosted on [GitHub](https://github.com/KristaRutz/). _Last Updated 03.03.2020._
+#### A An console-based application to simulate a cash register where the user can generate the exact coinage due, hosted on [GitHub](https://github.com/KristaRutz/coin-combinations-ConsoleApp). _Last Updated 03.06.2020._
 
-#### By _**Krista Rutz, [other contributors]**_
+#### By _**Krista Rutz**_
 
 ## Description
 
-This application lets the user... and does...
-It might even be hosted on hosted on [GitHub](https://github.com/KristaRutz/). It does so using this and this technology or concept.
+This application lets the user input total owed and total paid, calculates the total change owed in return, and lists the amount of each denomination that the checker should give back to the customer.
+It is hosted on [GitHub](https://github.com/KristaRutz/coin-combinations-ConsoleApp). It does so using objects within objects, exception throwing, and type casting between ints and doubles.
 
 ## Installation / Set-up
 
@@ -15,13 +15,13 @@ Download or clone the repository to run this program locally! _This program requ
 
 - Download or clone this repo.
   - **To Download ZIP:**
-    - Select "Download" on the [GitHub Repository](https://github.com/KristaRutz/) site
-    - Once downloaded, open the ZIP and extract files. The new folder will be created as 'ProjectName.Solution'.
+    - Select "Download" on the [GitHub Repository](https://github.com/KristaRutz/coin-combinations-ConsoleApp) site
+    - Once downloaded, open the ZIP and extract files. The new folder will be created as 'coin-combinations-ConsoleApp'.
   - **To Clone:**
-    - Clone from command line into your Desktop: `$ git clone https://github.com/KristaRutz/...`
-    - The new directory will be created as 'Desktop/ProjectName.Solution'.
+    - Clone from command line into your Desktop: `$ git clone https://github.com/KristaRutz/coin-combinations-ConsoleApp`
+    - The new directory will be created as 'Desktop/coin-combinations-ConsoleApp'.
 - Once you have stored the files locally, execute the following commands.
-  - Navigate to the application directory: `$ cd ProjectName.Solution/ProjectName`
+  - Navigate to the application directory: `$ cd coin-combinations-ConsoleApp/CoinCombinations`
   - `dotnet build`
   - `dotnet run`
 - Upon success, the program will begin running in your console.
@@ -33,20 +33,28 @@ Download or clone the repository to run this program locally! _This program requ
 
 ## Specs
 
-<details>
-  <summary>Expand specs for this project</summary>
+- Spec: The program calculates the difference between paid and owed and then prints how many of each type of coin or bill to make up that change.
+  - Input:
+    - Customer owes: [example formats: '$0.71' or '$12.01' or '$2']
+    - \$.72
+    - Customer paid:
+    - \$300
+  - Output:
+    - Change due: \$299.28
+    - hundreds: 59
+    - ones: 4
+    - quarters: 1
+    - pennies: 3
 
-| Spec | Example Input | Expected Output |
-| :--- | :------------ | :-------------- |
-
-
-</details>
 <details>
   <summary>Expand user stories for this project</summary>
 
-| As a _User-Type_, | I want... | so that... |
-| :---------------- | :-------- | :--------- |
-
+| As a _User-Type_,  | I want...                                                      | so that...                                                                |
+| :----------------- | :------------------------------------------------------------- | :------------------------------------------------------------------------ |
+| As a cashier       | I want a quick and accurate way to calculate change            | so that I can focus on customer service instead of math!                  |
+| As a store manager | I want my cashiers to know the number of each coin to give     | so that they give perfect, error-free change every time                   |
+| As a store manager | I want to determine perfect change                             | so that my customers never complain about inaccuracies                    |
+| As a customer      | I want to know exactly how many of each coin I should get back | so that I can have the least number of coins to carry around as possible. |
 
 </details>
 
@@ -60,7 +68,7 @@ Please contact me if you run into any issues or have questions, ideas or concern
 
 ### License
 
-Copyright (c) 2020 **_Krista Rutz, [Others]_**
+Copyright (c) 2020 **_Krista Rutz_**
 
 _This software is licensed under the MIT license._
 
